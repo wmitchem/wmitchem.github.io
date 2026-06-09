@@ -8,15 +8,15 @@ var logger = require("morgan");
 var passport = require("passport");
 require("./app_api/config/passport");
 
+// Bring in the database
+require("./app_api/models/db");
+
 // Define routers
 var indexRouter = require("./app_server/routes/index");
 var usersRouter = require("./app_server/routes/users");
 var travelRouter = require("./app_server/routes/travel");
 var apiRouter = require("./app_api/routes/index");
 var handlebars = require("hbs");
-
-// Bring in the database
-require("./app_api/models/db");
 
 // Bring in the contents of the .env file
 require("dotenv").config();
@@ -52,7 +52,10 @@ app.use("/api", (req, res, next) => {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization",
   );
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+  );
   next();
 });
 

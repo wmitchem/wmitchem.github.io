@@ -9,6 +9,10 @@ import AddTrip from '../pages/AddTrip';
 import EditTrip from '../pages/EditTrip';
 import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
+import PokemonDatabase from '../pages/PokemonDatabase';
+import PokemonDetail from '../pages/PokemonDetail';
+import HuntSetup from '../pages/HuntSetup';
+import HuntsDashboard from '../pages/HuntsDashboard';
 
 /**
  * Props configuration for the ProtectedRoute guard component.
@@ -28,7 +32,7 @@ interface ProtectedRouteProps {
 function ProtectedRoute({ children }: ProtectedRouteProps): React.JSX.Element {
   const { user } = useAuthContext();
 
-  // Redirect to login if there is no active user session
+  // Redirecting to login if there is no active user session
   if (!user) {
     return <Navigate to="/login" replace />;
   }
@@ -50,6 +54,8 @@ export default function AppRoutes(): React.JSX.Element {
         <Route path="/" element={<TripListing />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/pokemon" element={<PokemonDatabase />} />
+        <Route path="/pokemon/:id" element={<PokemonDetail />} />
 
         {/* Protected Administrative Dashboard Operations */}
         <Route
@@ -65,6 +71,22 @@ export default function AppRoutes(): React.JSX.Element {
           element={
             <ProtectedRoute>
               <EditTrip />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/hunts/new/:id"
+          element={
+            <ProtectedRoute>
+              <HuntSetup />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/hunts"
+          element={
+            <ProtectedRoute>
+              <HuntsDashboard />
             </ProtectedRoute>
           }
         />

@@ -4,6 +4,8 @@ const jwt = require("jsonwebtoken"); // Enable JSON Web Tokens
 
 const tripsController = require("../controllers/trips");
 const authController = require("../controllers/authentication");
+const huntsController = require("../controllers/shinyHunts");
+const pokemonController = require("../controllers/pokemon");
 
 function authenticateJWT(req, res, next) {
   // console.log('In Middleware');
@@ -61,5 +63,41 @@ router
   .route("/trips/:tripCode")
   .get(tripsController.tripsFindByCode)
   .put(authenticateJWT, tripsController.tripsUpdateTrip);
+
+// ============================================
+// ShinyHunt Routing
+// ============================================
+
+// Base routes for fetching and creating hunts
+router
+  .route("/hunts")
+  .get(authenticateJWT, huntsController.listUserHunts)
+  .post(authenticateJWT, huntsController.addHunt);
+
+// Route for rapidly incrementing and decrementing an encounter counter via the UI
+router
+  .route("/hunts/:huntId/encounter")
+  .patch(authenticateJWT, huntsController.updateEncounters);
+
+// Route for marking a hunt as successfully caught
+router
+  .route("/hunts/:huntId/catch")
+  .patch(authenticateJWT, huntsController.catchHunt);
+
+// Route for deleting a hunt
+router
+  .route("/hunts/:huntId")
+  .delete(authenticateJWT, huntsController.deleteHunt);
+
+// ============================================
+// Pokemon Caching Routing
+// ============================================
+
+router
+  .route("/pokemon")
+  .get(pokemonController.listPokemon)
+  .post(pokemonController.cachePokemon);
+
+router.route("/pokemon/:id").get(pokemonController.getPokemonById);
 
 module.exports = router;

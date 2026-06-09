@@ -9,18 +9,18 @@ import Navbar from './ui/Navbar';
  */
 export default function Layout(): React.JSX.Element {
   return (
-    <div className="site-wrapper d-flex flex-column min-vh-100 bg-light">
+    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
       {/* Global Application Header */}
       <Navbar />
 
       {/* Main Page Body Frame Shell */}
-      <main className="flex-grow-1 container px-4 py-4">
+      <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <Outlet />
       </main>
 
       {/* Standardized Application Footer */}
-      <footer className="bg-white border-top text-center py-3 mt-auto text-muted small">
-        <div className="container">
+      <footer className="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-700 text-center py-4 mt-auto text-gray-500 dark:text-gray-400 text-sm transition-colors duration-300">
+        <div className="w-full max-w-7xl mx-auto px-4">
           &copy; {new Date().getFullYear()} Travlr Vacations Dashboard. Built
           with React 19 & TypeScript.
         </div>

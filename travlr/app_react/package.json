@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "combine": "find src -type f \\( -name '*.ts' -o -name '*.tsx' \\) -exec cat {} + > code.txt"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",

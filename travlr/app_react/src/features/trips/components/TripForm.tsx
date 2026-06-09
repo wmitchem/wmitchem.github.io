@@ -17,6 +17,7 @@ interface TripFormProps {
 /**
  * A reusable, data-driven form component for managing trip additions and updates.
  * Loops through a field configuration registry to render input layouts.
+ * Fully refactored to utilize Tailwind CSS layouts.
  *
  * @param props - Component configuration properties and state initializers.
  * @returns A JSX element rendering the structured form and validation boundaries.
@@ -76,7 +77,7 @@ export default function TripForm({
   };
 
   return (
-    <form onSubmit={handleFormSubmit} className="trip-management-form">
+    <form onSubmit={handleFormSubmit} className="flex flex-col gap-5">
       {tripFormFields.map((field) => (
         <FormInput
           key={field.name}
@@ -92,8 +93,11 @@ export default function TripForm({
         />
       ))}
 
-      <div className="mt-4 pt-2 border-top d-flex justify-content-end">
-        <button type="submit" className="btn btn-primary px-4 shadow-sm">
+      <div className="mt-6 pt-4 border-t border-gray-200 dark:border-slate-700 flex justify-end transition-colors duration-300">
+        <button
+          type="submit"
+          className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-800"
+        >
           Save Vacation Details
         </button>
       </div>

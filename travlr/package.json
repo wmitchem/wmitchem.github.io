@@ -4,12 +4,20 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "db:seed": "cd app_server && node ./models/seed",
+    "db:seed:trips": "cd app_server && node ./models/seed",
+    "db:seed:pokedex": "cd app_api && node ./models/seedDatabase",
+    "db:seed:hunts": "cd app_api && node ./models/seedHuntData",
+    "db:seed": "npm run db:seed:trips && npm run db:seed:pokedex && npm run db:seed:hunts",
     "install:all": "npm install && cd app_angular && npm install && cd ../app_react && npm install",
     "launch": "concurrently \"npm run start:backend\" \"npm run start:angular\" \"npm run start:react\"",
     "start:angular": "cd app_angular && npx ng serve",
     "start:backend": "cd app_server && npm start",
-    "start:react": "cd app_react && npm run dev"
+    "start:react": "cd app_react && npm run dev",
+    "combine:js": "find app_server app_api -type f -name '*.js' -exec sh -c 'for f; do echo \"$f :\"; cat \"$f\"; echo \"\"; done' _ {} + > ../../server_api_code.txt",
+    "combine:ts": "find app_react/src -type f \\( -name '*.ts' -o -name '*.tsx' \\) -exec sh -c 'for f; do echo \"$f:\"; cat \"$f\"; echo \"\"; done' _ {} + > ../../tscode.txt",
+    "tree": "tree app_react/src > ../../project_tree.txt && npm run tree:api",
+    "tree:api": "echo >> ../../project_tree.txt && tree app_api >> ../../project_tree.txt",
+    "combine:all": "npm run combine:js && npm run combine:ts && npm run tree"
   },
   "dependencies": {
     "@angular/cli": "^21.2.7",
