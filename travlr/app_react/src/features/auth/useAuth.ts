@@ -2,9 +2,11 @@ import { useMutation, type UseMutationResult } from '@tanstack/react-query';
 import { apiClient } from '../../services/apiClient';
 import { saveToken } from './authUtils';
 import { useAuthContext } from './AuthContext';
-import type { AuthResponse } from '../../types/AuthResponse';
-import type { LoginCredentials } from '../../types/LoginCredentials';
-import type { RegisterCredentials } from '../../types/RegisterCredentials';
+import type {
+  AuthResponse,
+  LoginCredentials,
+  RegisterCredentials,
+} from '@capstone/shared';
 
 /**
  * Custom mutation hook for managing user login requests.

@@ -25,12 +25,12 @@ const runBenchmark = (testName: string, callback: () => void) => {
 
 // --- Test 1: Simple Filtering ---
 runBenchmark('1. Simple Filter (.where)', () => {
-  createCollectionQuery(mockData).where('generation', '===', 4).execute();
+  createCollectionQuery(mockData).where('generation').equals(4).execute();
 });
 
 // --- Test 2: Array Inclusion Filtering ---
 runBenchmark('2. Array Inclusion (.where includes)', () => {
-  createCollectionQuery(mockData).where('types', 'includes', 'fire').execute();
+  createCollectionQuery(mockData).where('types').includes('fire').execute();
 });
 
 // --- Test 3: Nested Sorting ---
@@ -41,8 +41,10 @@ runBenchmark('3. Nested Property Sorting (.sortBy)', () => {
 // --- Test 4: Complex Chaining ---
 runBenchmark('4. Complex Chain (where + where + sortBy)', () => {
   createCollectionQuery(mockData)
-    .where('generation', '>=', 2)
-    .where('types', 'includes', 'water')
+    .where('generation')
+    .greaterThanOrEqual(2)
+    .where('types')
+    .includes('water')
     .sortBy('stats.hp', 'asc')
     .execute();
 });

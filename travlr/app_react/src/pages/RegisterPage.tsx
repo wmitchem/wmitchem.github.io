@@ -1,8 +1,8 @@
 import React, { useState, type ChangeEvent } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router';
 import { useRegisterMutation } from '../features/auth/useAuth';
 import FormInput from '../components/ui/FormInput';
-import type { RegisterCredentials } from '../types/RegisterCredentials';
+import type { RegisterCredentials } from '@capstone/shared';
 
 /** Internal state mapping for the flat registration form fields. */
 interface RegisterFormState {

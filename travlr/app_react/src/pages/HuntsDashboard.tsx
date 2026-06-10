@@ -4,7 +4,7 @@ import React, {
   useOptimistic,
   startTransition,
 } from 'react';
-import type { ShinyHunt } from '../features/pokemon/types/ShinyHunt';
+import type { ShinyHunt } from '@capstone/shared';
 import {
   getAllHunts,
   catchShinyHunt,

@@ -1,5 +1,5 @@
 import { apiClient } from './apiClient';
-import type { ShinyHunt } from '../features/pokemon/types/ShinyHunt';
+import type { ShinyHunt } from '@capstone/shared';
 
 /**
  * Interface defining the payload required to initialize a new shiny hunt.

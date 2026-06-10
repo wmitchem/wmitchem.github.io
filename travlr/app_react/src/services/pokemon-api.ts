@@ -1,7 +1,7 @@
 import { apiClient } from './apiClient';
-import type { AppPokemon } from '../features/pokemon/types/AppPokemon';
+import type { Pokemon } from '@capstone/shared';
 
-export const fetchAllPokemon = async (): Promise<AppPokemon[]> => {
+export const fetchAllPokemon = async (): Promise<Pokemon[]> => {
   const response = await apiClient('/pokemon');
   return response.data;
 };
@@ -12,7 +12,7 @@ export const fetchAllPokemon = async (): Promise<AppPokemon[]> => {
  * @param id - The unique National Dex ID string of the Pokemon.
  * @returns A promise that resolves to the detailed AppPokemon object.
  */
-export const fetchPokemonById = async (id: string): Promise<AppPokemon> => {
+export const fetchPokemonById = async (id: string): Promise<Pokemon> => {
   const response = await apiClient.get(`/pokemon/${id}`);
   return response.data;
 };

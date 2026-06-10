@@ -1,4 +1,4 @@
-import type { User } from '../../types/User';
+import type { User } from '@capstone/shared';
 
 /** Key identifier used to store the token in localStorage. */
 const TOKEN_KEY = 'travlr-token' as const;

@@ -1,12 +1,8 @@
 @import 'tailwindcss';
 
-/* Ensures Tailwind's dark mode utility triggers based on our Context Provider's class */
+/* Ensures Tailwind's dark mode utility triggers based on the Context Provider's class */
 @variant dark (&:is(.dark, .dark *));
 
-/* Global Application Reset & Root Layout 
-  This ensures our React application scales to the full screen height 
-  and maintains a flexible column layout for our routing Shell.
-*/
 #root {
   max-width: 100%;
   margin: 0 auto;
@@ -16,9 +12,6 @@
   box-sizing: border-box;
 }
 
-/* You can leave global, tag-level typography resets here if desired, 
-  but Tailwind's base reset usually handles this automatically!
-*/
 h1,
 h2,
 h3,

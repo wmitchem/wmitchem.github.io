@@ -1,8 +1,8 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 import { fetchPokemonById } from '../services/pokemon-api';
-import type { AppPokemon } from '../features/pokemon/types/AppPokemon';
+import type { Pokemon } from '@capstone/shared';
 import { getPokemonImageURL } from '../features/pokemon/utils/spriteFetcher';
 
 /**
@@ -29,7 +29,7 @@ export default function PokemonDetail(): React.JSX.Element {
     data: pokemon,
     isLoading,
     isError,
-  } = useQuery<AppPokemon>({
+  } = useQuery<Pokemon>({
     queryKey: ['pokemon', id],
     queryFn: () => fetchPokemonById(id as string),
     enabled: !!id,
@@ -76,7 +76,7 @@ export default function PokemonDetail(): React.JSX.Element {
               {pokemon.name}
             </h1>
             <p className="text-gray-500 dark:text-gray-400 font-medium">
-              National Dex #{String(pokemon.id).padStart(3, '0')}
+              National Dex #{String(pokemon.dexNumber).padStart(3, '0')}
             </p>
 
             <div className="flex gap-2 mt-4 mb-6">

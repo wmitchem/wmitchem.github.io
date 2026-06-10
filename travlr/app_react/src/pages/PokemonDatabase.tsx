@@ -1,8 +1,8 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React, { useState, useMemo } from 'react';
+import { useSearchParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 
-import type { AppPokemon } from '../features/pokemon/types/AppPokemon';
+import type { Pokemon } from '@capstone/shared';
 import { PokemonCard } from '../features/pokemon/components/PokemonCard';
 import { createCollectionQuery } from '../utils/collectionQuery';
 import { fetchAllPokemon } from '../services/pokemon-api';
@@ -32,7 +32,7 @@ const POKEMON_TYPES = [
 const GAME_GENERATIONS = Array.from({ length: 9 }, (_, i) => i + 1);
 
 const SORT_OPTIONS = [
-  { label: 'Pokédex Number', value: 'id' },
+  { label: 'Pokédex Number', value: 'dexNumber' },
   { label: 'Weight', value: 'weight' },
   { label: 'Height', value: 'height' },
   { label: 'HP', value: 'stats.hp' },
@@ -62,7 +62,7 @@ export default function PokemonDatabase(): React.JSX.Element {
     data: pokemonIndex,
     isLoading,
     isError,
-  } = useQuery<AppPokemon[]>({
+  } = useQuery<Pokemon[]>({
     queryKey: ['pokemonIndex'],
     queryFn: fetchAllPokemon,
     staleTime: 1000 * 60 * 5,
@@ -138,7 +138,7 @@ export default function PokemonDatabase(): React.JSX.Element {
     activeType1 !== 'All' ||
     activeType2 !== 'All' ||
     activeGen !== 'All' ||
-    sortField !== 'id' ||
+    sortField !== 'dexNumber' ||
     sortDirection !== 'asc';
 
   if (isLoading) {
@@ -214,7 +214,7 @@ export default function PokemonDatabase(): React.JSX.Element {
                   {suggestion.name}
                 </span>
                 <span className="ml-auto text-sm text-gray-500 dark:text-gray-400">
-                  Dex #{suggestion.id}
+                  Dex #{suggestion.dexNumber}
                 </span>
               </li>
             ))}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTrips } from '../features/trips/useTrips';
 import TripCard from '../features/trips/components/TripCard';
-import type { Trip } from '../types/Trip';
+import type { Trip } from '@capstone/shared';
 
 /**
  * Page component that queries the trip index database collection and lists the results.

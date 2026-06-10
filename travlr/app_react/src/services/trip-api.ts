@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-import type { Trip } from '../types/Trip';
-import type { User } from '../types/User';
-import type { AuthResponse } from '../types/AuthResponse';
+import type { Trip, User, AuthResponse } from '@capstone/shared';
 
 const URL = 'http://localhost:3000/api/trips';
 const BASE_URL = 'http://localhost:3000/api';

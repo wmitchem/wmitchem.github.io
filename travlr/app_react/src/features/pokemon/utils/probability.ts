@@ -1,4 +1,4 @@
-import type { GameGeneration, HuntMethod } from '../types/ShinyHunt';
+import type { GameGeneration, HuntMethod } from '@capstone/shared';
 
 /**
  * Determines the base shiny rate fraction based on the game's generation and active items.

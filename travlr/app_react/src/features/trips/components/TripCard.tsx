@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { useAuthContext } from '../../auth/AuthContext';
-import type { Trip } from '../../../types/Trip';
+import type { Trip } from '@capstone/shared';
 
 interface TripCardProps {
   trip: Trip;

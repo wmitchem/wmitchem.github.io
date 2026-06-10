@@ -7,7 +7,7 @@ import React, {
   type ReactNode,
 } from 'react';
 import { getCurrentUser, logoutUser } from './authUtils';
-import type { User } from '../../types/User';
+import type { User } from '@capstone/shared';
 
 /**
  * Interface that defines the state and handlers available throughout the authentication context.

@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { useAddTrip } from '../features/trips/useTrips';
 import TripForm from '../features/trips/components/TripForm';
-import type { Trip } from '../types/Trip';
+import type { Trip } from '@capstone/shared';
 
 /**
  * Administrative page view handling the addition of new trip entries to the database.

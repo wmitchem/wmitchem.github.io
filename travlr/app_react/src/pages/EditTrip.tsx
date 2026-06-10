@@ -1,8 +1,8 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router';
 import { useTripDetail, useUpdateTrip } from '../features/trips/useTrips';
 import TripForm from '../features/trips/components/TripForm';
-import type { Trip } from '../types/Trip';
+import type { Trip } from '@capstone/shared';
 
 /**
  * Administrative page view that grabs route parameters to query and update specific trip records.

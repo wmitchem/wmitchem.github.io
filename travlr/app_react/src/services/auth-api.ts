@@ -1,5 +1,4 @@
-import type { User } from '../types/User';
-import type { AuthResponse } from '../types/AuthResponse';
+import type { User, AuthResponse } from '@capstone/shared';
 import tripApi from './trip-api';
 
 // File-scoped constant. Private to this module automatically.

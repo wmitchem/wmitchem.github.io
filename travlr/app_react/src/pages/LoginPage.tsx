@@ -1,8 +1,8 @@
 import React, { useState, type ChangeEvent } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router';
 import { useLoginMutation } from '../features/auth/useAuth';
 import FormInput from '../components/ui/FormInput';
-import type { LoginCredentials } from '../types/LoginCredentials';
+import type { LoginCredentials } from '@capstone/shared';
 
 /**
  * Page component that displays the user login form.
