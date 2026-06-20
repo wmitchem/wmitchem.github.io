@@ -1,0 +1,53 @@
+{
+  "name": "travlr",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./dist/bin/www.js",
+    "dev": "tsx watch ./bin/www.ts",
+    "build": "tsc",
+    "db:seed:trips": "cd app_api && tsx ./models/seed",
+    "db:seed:pokedex": "cd app_api && tsx ./models/seedDatabase",
+    "db:seed:hunts": "cd app_api && tsx ./models/seedHuntData",
+    "db:seed": "npm run db:seed:trips && npm run db:seed:pokedex && npm run db:seed:hunts",
+    "install:all": "npm install && cd app_react && npm install",
+    "launch": "concurrently \"npm run start:backend\" \"npm run start:react\"",
+    "start:backend": "npm run dev",
+    "start:react": "cd app_react && npm run dev",
+    "combine:api": "find app_api -type f -name '*.ts' -exec sh -c 'for f; do echo \"$f :\"; cat \"$f\"; echo \"\"; done' _ {} + > ../../api_code.txt",
+    "combine:react": "find app_react/src -type f \\( -name '*.ts' -o -name '*.tsx' \\) -exec sh -c 'for f; do echo \"$f:\"; cat \"$f\"; echo \"\"; done' _ {} + > ../../react_code.txt",
+    "combine:shared": "find shared -type f -name '*.ts' -exec sh -c 'for f; do echo \"$f :\"; cat \"$f\"; echo \"\"; done' _ {} + > ../../shared.txt",
+    "tree": "tree app_react/src > ../../project_tree.txt && npm run tree:api && npm run tree:shared",
+    "tree:api": "echo >> ../../project_tree.txt && tree app_api >> ../../project_tree.txt",
+    "tree:shared": "echo >> ../../project_tree.txt && tree shared >> ../../project_tree.txt",
+    "combine:all": "npm run combine:api && npm run combine:react && npm run combine:shared && npm run tree"
+  },
+  "dependencies": {
+    "@capstone/shared": "*",
+    "concurrently": "^9.2.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^17.4.2",
+    "express": "^4.22.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.3.3",
+    "morgan": "^1.11.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/debug": "^4.1.13",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^25.9.2",
+    "@types/passport-local": "^1.0.38",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  },
+  "workspaces": [
+    "app_react",
+    "shared"
+  ]
+}

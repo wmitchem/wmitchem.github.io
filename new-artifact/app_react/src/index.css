@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+
+/* Ensures Tailwind's dark mode utility triggers based on the Context Provider's class */
+@variant dark (&:is(.dark, .dark *));
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
