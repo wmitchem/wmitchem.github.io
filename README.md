@@ -58,7 +58,7 @@ Another major part of this enhancement was overhauling the user interface. The o
 
 Overall, this first enhancement really deepened my understanding of the separation of concerns. By isolating the stateful parts of my application (like the main pages) from the generic visual elements (like buttons and cards), I learned how to build truly reusable UI components. It was a challenging process making sure the new frontend communicated smoothly with the existing backend, but it gave me a much stronger grasp on modern web development.
 
-* **[Read the Full Enhancement I Narrative Here](assets/Module-3-Narrative.pdf)**
+* **[Read the Full Enhancement I Narrative Here](assets/module3-narrative.pdf)**
 
 ### Enhancement II: Algorithms & Data Structures
 
@@ -72,7 +72,7 @@ This enhancement pushed me to really understand how React handles state and data
 
 Looking back on this phase of the project, I feel I learned a tremendous amount about the mechanics of data management in a web application. It was incredibly satisfying to see how writing efficient, client-side algorithms could take a slow, server-dependent application and turn it into a lightning-fast experience for the end user.
 
-* **[Read the Full Enhancement II Narrative Here](assets/Module-4-Narrative.pdf)**
+* **[Read the Full Enhancement II Narrative Here](assets/module4-narrative.pdf)**
 
 ### Enhancement III: Databases
 
@@ -86,7 +86,7 @@ I also had to optimize how the application communicates with the database during
 
 Reflecting on this final enhancement, time management ended up being my biggest challenge, as I quickly realized that the algorithm and database changes heavily relied on one another and had to be built simultaneously. Despite that, completing this database overhaul was a great learning experience. It tied the whole project together and taught me how to think about software not just as a user interface, but as a complete, secure pipeline from the client all the way down to the database storage.
 
-* **[Read the Full Enhancement III Narrative Here](assets/Module-5-Narrative.pdf)**
+* **[Read the Full Enhancement III Narrative Here](assets/module5-narrative.pdf)**
 
 ---
 
