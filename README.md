@@ -1,4 +1,9 @@
-# wmitchem.github.io
+---
+layout: default
+title: CS499 Capstone ePortfolio
+description: A comprehensive showcase of Software Engineering, Algorithms, and Database Architecture by William Mitchem.
+---
+
 # William Mitchem
 **Full-Stack Software Engineer** <!--[LinkedIn](#)--> | [GitHub](https://github.com/wmitchem) | [Email](mailto:will.a.mitchem@gmail.com) <!--[Live Project Demo](#)-->
 
