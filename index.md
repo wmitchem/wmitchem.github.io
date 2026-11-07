@@ -11,12 +11,11 @@ description: A comprehensive showcase of Software Engineering, Algorithms, and D
 
 ## Table of Contents
 1. [Professional Self-Assessment](#professional-self-assessment)
-2. [Informal Code Review](#informal-code-review)
-3. [Project Portfolio: The Pokémon Shiny Tracker](#project-portfolio-the-pokémon-shiny-tracker)
+2. [Project Portfolio: The Pokémon Shiny Tracker](#project-portfolio-the-pokémon-shiny-tracker)
     * [Enhancement I: Software Design & Engineering](#enhancement-i-software-design--engineering)
     * [Enhancement II: Algorithms & Data Structures](#enhancement-ii-algorithms--data-structures)
     * [Enhancement III: Databases](#enhancement-iii-databases)
-4. [Source Code & Artifacts](#source-code--artifacts)
+3. [Source Code & Artifacts](#source-code--artifacts)
 
 ---
 
