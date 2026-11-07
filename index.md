@@ -41,14 +41,6 @@ The artifacts you will see in this portfolio represent the culmination of everyt
 
 ---
 
-## Informal Code Review
-
-Before writing any new code for my capstone, I recorded an informal code review of the original travel agency project I built for my Full Stack Development class. Walking through the old MEAN stack codebase helped me figure out exactly what I needed to fix—like organizing the files better, tightening up security, and figuring out how to handle data more efficiently—before I started transforming the app into the Pokémon Tracker.
-
-* **[View the Informal Code Review Video on Google Drive ↗](https://drive.google.com/file/d/16mDdnEwSYKeeSo-IiISsnZ7LC9B-4Nho/view?usp=sharing)**
-
----
-
 ## Project Portfolio: The Pokémon Shiny Tracker
 **Tech Stack:** React 19, TypeScript, Tailwind CSS, Node.js, Express, MongoDB, Mongoose
 
